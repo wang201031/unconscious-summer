@@ -4,168 +4,244 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>《无意识之夏》下载 · 东方Project二次创作</title>
-<meta name="description" content="东方Project二次创作 · 横屏视觉小说《无意识之夏》安卓版下载。">
+<meta name="description" content="东方Project二次创作 · 横屏视觉小说《无意识之夏》。安卓 APK 与 PC 版免费下载，古明地恋单人线、三结局。">
+<link rel="icon" href="images/icon.png">
 <style>
   :root{
-    --bg:#0e1014; --card:#171b22; --line:#252b35; --fg:#e9edf3; --dim:#9aa4b2;
-    --gold:#ffd479; --green:#8fd3a8; --pink:#ff9ec7;
+    --bg:#0a0d14; --card:#141925; --line:#232b3a; --fg:#eaeef6; --dim:#93a0b4;
+    --gold:#ffd479; --rose:#ff9ec7; --green:#8fd3a8;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--fg);
-       font:16px/1.7 "PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;}
+       font:16px/1.75 "PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+       -webkit-font-smoothing:antialiased}
   a{color:var(--gold);text-decoration:none}
-  .wrap{max-width:760px;margin:0 auto;padding:22px 16px 60px}
-  header{text-align:center;padding:26px 0 10px}
-  h1{margin:0 0 6px;font-size:26px;letter-spacing:.06em}
-  .sub{color:var(--dim);font-size:14px}
-  .tip{margin:14px 0 0;padding:10px 14px;border:1px solid var(--line);border-radius:12px;
-       background:#12161c;color:var(--gold);font-size:14px;display:none}
-  h2{font-size:17px;margin:30px 0 12px;color:var(--dim);font-weight:600;letter-spacing:.04em}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
-        padding:18px 16px;margin:0 0 14px}
-  .card.rec{border-color:#4a3f22;box-shadow:0 0 0 1px #4a3f22 inset,0 6px 26px #0006}
-  .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .name{font-size:19px;font-weight:700}
-  .badge{font-size:12px;padding:3px 9px;border-radius:999px;background:#2a3240;color:var(--green)}
-  .badge.warn{background:#3a2a2a;color:var(--pink)}
-  .meta{color:var(--dim);font-size:13px;margin:6px 0 14px}
-  .btns{display:grid;gap:10px}
-  .btn{display:block;text-align:center;padding:14px 16px;border-radius:12px;
-       background:#262d38;color:var(--fg);font-weight:700;border:1px solid #333c49}
-  .btn.primary{background:linear-gradient(180deg,#ffe0a0,#f5c96c);color:#2a2109;border-color:#e5bb63}
+  img{display:block;max-width:100%}
+  .wrap{max-width:880px;margin:0 auto;padding:0 16px}
+  h2{font-size:18px;margin:38px 0 14px;color:var(--dim);font-weight:600;letter-spacing:.08em}
+  h2::before{content:"";display:inline-block;width:8px;height:8px;margin-right:10px;
+             border-radius:2px;background:var(--gold);vertical-align:2px}
+
+  /* ── 主视觉 ── */
+  .hero{position:relative;min-height:clamp(340px,44vw,540px);display:flex;align-items:flex-end;
+        background:#0a0d14 url(images/banner.webp) 68% 40%/cover no-repeat}
+  .hero::after{content:"";position:absolute;inset:0;
+        background:linear-gradient(90deg,#070b12f5 0%,#070b12b8 34%,#070b1200 66%),
+                   linear-gradient(0deg,#0a0d14 1%,#0a0d1400 42%)}
+  .hero-inner{position:relative;z-index:2;width:100%;max-width:880px;margin:0 auto;
+              padding:30px 20px 34px}
+  .hero h1{margin:0 0 8px;font-size:clamp(30px,6.4vw,54px);letter-spacing:.1em;
+           text-shadow:0 2px 24px #000a}
+  .hero .tag{color:#dfe6f2;font-size:clamp(13px,2.6vw,16px);opacity:.92}
+  .hero .ver{display:inline-block;margin-top:12px;padding:3px 12px;border-radius:999px;
+             background:#ffffff14;border:1px solid #ffffff26;color:var(--gold);font-size:13px}
+  .hero .cta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+       padding:14px 22px;border-radius:12px;font-weight:700;border:1px solid #333c49;
+       background:#262d38;color:var(--fg);transition:.15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:linear-gradient(180deg,#ffe2a6,#f2c45f);color:#2a2109;border-color:#e5bb63;
+               box-shadow:0 6px 22px #f2c45f33}
+  .btn.ghost{background:#ffffff10;border-color:#ffffff2e;color:#e8edf6}
   .btn.disabled{opacity:.45;pointer-events:none}
   .btn small{display:block;font-weight:400;font-size:12px;opacity:.75;margin-top:2px}
+
+  /* ── 下载卡 ── */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+        padding:18px 16px;margin:0 0 14px}
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .name{font-size:19px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .badge{font-size:12px;padding:3px 10px;border-radius:999px;background:#22303f;color:var(--green)}
+  .meta{color:var(--dim);font-size:13px;margin:8px 0 14px}
+  .btns{display:grid;gap:10px}
   .sha{margin-top:12px;font-size:12px;color:var(--dim)}
-  .sha code{display:block;word-break:break-all;background:#0f1319;border:1px solid var(--line);
-            border-radius:8px;padding:8px;margin-top:6px;font-size:11px;color:#c8d2df}
+  .sha code{display:block;word-break:break-all;background:#0c1017;border:1px solid var(--line);
+            border-radius:8px;padding:8px;margin-top:6px;font-size:11px;color:#c3cee0}
   .mini{display:inline-block;margin-left:8px;padding:2px 8px;font-size:12px;border:1px solid var(--line);
-        border-radius:8px;background:#101419;cursor:pointer;color:var(--dim)}
+        border-radius:8px;background:#101722;cursor:pointer;color:var(--dim)}
+  .mini:hover{color:var(--fg);border-color:#3b4658}
+
+  /* ── 画面预览 ── */
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:620px){
+    .shots{grid-template-columns:repeat(2,1fr)}
+    .row{flex-direction:column;align-items:flex-start;gap:6px}   /* 窄屏：徽章换行，避免被挤到边缘 */
+  }
+  .shot{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line);
+        cursor:zoom-in;aspect-ratio:16/9;background:#0d1118}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:.25s}
+  .shot:hover img{transform:scale(1.04)}
+  .shot::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 40px #0006}
+  .lb{position:fixed;inset:0;background:#05070beb;display:none;align-items:center;justify-content:center;
+      z-index:99;padding:20px;cursor:zoom-out}
+  .lb.on{display:flex}
+  .lb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 10px 60px #000a}
+
+  /* ── 说明 ── */
   ul{padding-left:20px;margin:8px 0}
-  li{margin:4px 0;color:#c7cfda;font-size:14px}
-  footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);
-         color:#7d8797;font-size:12px;line-height:1.8}
-  .ok{color:var(--green)}
+  li{margin:5px 0;color:#c6d0de;font-size:14.5px}
+  .kbd{background:#1b2330;border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px}
+
+  /* ── 页脚 ── */
+  footer{margin:46px 0 0;padding:26px 0 46px;border-top:1px solid var(--line);
+         color:#7f8b9d;font-size:13px;line-height:1.9}
+  .foot{display:flex;gap:22px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+  .credit b{color:#cfd8e6}
+  .qr{width:132px;text-align:center;color:#7f8b9d;font-size:12px}
+  .qr img{border-radius:10px;background:#fff;padding:6px;margin-bottom:6px}
 </style>
 </head>
 <body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>无意识之夏</h1>
+    <div class="tag">东方Project 二次创作 · 横屏视觉小说 · 古明地恋 单人线</div>
+    <div class="ver" id="ver"></div>
+    <div class="cta">
+      <a class="btn primary" href="#download">↓ 下载游戏</a>
+      <a class="btn ghost" href="#shots">看画面</a>
+    </div>
+  </div>
+</header>
+
 <div class="wrap">
 
-  <header>
-    <h1>《无意识之夏》</h1>
-    <div class="sub">东方Project 二次创作 · 横屏视觉小说 · 古明地恋 单人线</div>
-    <div class="sub" id="ver"></div>
-    <div class="tip" id="devtip"></div>
-  </header>
+  <h2 id="shots">游戏画面</h2>
+  <div class="shots" id="shotbox">
+    <div class="shot"><img src="images/cg/cg_01_meeting.webp" alt="相遇"></div>
+    <div class="shot"><img src="images/cg/cg_04_sunset.webp" alt="黄昏"></div>
+    <div class="shot"><img src="images/cg/cg_03_guardian.webp" alt="守护"></div>
+    <div class="shot"><img src="images/cg/cg_06_festival.webp" alt="祭典"></div>
+    <div class="shot"><img src="images/cg/cg_07_fireworks.webp" alt="烟花"></div>
+    <div class="shot"><img src="images/cg/cg_09_bowl.webp" alt="捞金鱼"></div>
+  </div>
+  <p style="color:var(--dim);font-size:13px;margin-top:10px">（点击可放大。游戏内还有动态立绘、动态 CG 与 86 处环境音。）</p>
 
-  <h2>下载</h2>
+  <h2 id="download">下载</h2>
   <div id="dl"></div>
 
   <h2>安装说明（安卓）</h2>
   <ul>
-    <li>浏览器下载完成后，点安装；系统提示"未知来源"时选择允许即可（同人游戏不上架应用商店时的正常步骤）。</li>
-    <li>以后出更新版时，直接覆盖安装即可（同一签名，不用先卸载）。</li>
+    <li>浏览器下载完成后点安装，系统提示"未知来源"时选择允许即可（同人游戏正常步骤）。</li>
+    <li>以后出更新版时直接覆盖安装（同一签名，不用先卸载）。</li>
     <li>建议横屏游玩；首次进入较慢属于正常。</li>
   </ul>
 
   <h2>安装说明（PC / Windows）</h2>
   <ul>
-    <li>把下载到的 zip <b>完整解压</b>成文件夹（别在压缩包里直接运行）。</li>
-    <li>双击文件夹里的「<b>无意识之夏.exe</b>」开始游戏；首次启动会慢一点。</li>
-    <li>如果杀毒软件误报（同人游戏未签名常见），选择"允许运行"即可。</li>
+    <li>把 zip <b>完整解压</b>成文件夹（别在压缩包里直接运行）。</li>
+    <li>双击文件夹里的「<b>无意识之夏.exe</b>」开始；首次启动稍慢。</li>
+    <li>若杀毒软件误报（未签名同人游戏常见），选择"允许运行"即可。</li>
   </ul>
 
-  <h2>校验码</h2>
-  <p style="font-size:14px;color:#c7cfda">下载后可以核对 SHA-256，确认文件没被二次打包/篡改：</p>
-  <div id="sha"></div>
-
   <footer>
-    <div>东方Project 二次创作 · 非商业同人 · 不使用官方游戏素材。</div>
-    <div>本作美术素材由 AI 生成（anima / ComfyUI），动态演出由 AI 视频模型生成，剧本经 AI 辅助撰写与润色。</div>
-    <div>若涉及任何侵权内容，请联系我立刻删除整改。</div>
-    <div id="contact"></div>
+    <div class="foot">
+      <div class="credit">
+        <div>作者：<b>sjsjsjwaj</b>（B站同名）｜ QQ：<b>1694515313</b></div>
+        <div style="margin-top:8px">东方Project 二次创作 · 完全非商业 · 不使用官方游戏素材，请勿倒卖。</div>
+        <div>美术素材由 AI 生成（ComfyUI · anima；动态演出由 MiniMax H3 生成），剧本经 AI 辅助撰写与润色。</div>
+        <div>曲目为东方 Project 二次创作曲（同人编曲），原曲版权归 ZUN / 上海爱丽丝幻乐团所有。</div>
+        <div>若涉及任何侵权内容，请联系作者立刻删除整改。</div>
+      </div>
+      <div class="qr">
+        <img src="images/qr.png" alt="扫码打开本页">
+        扫码在手机上打开
+      </div>
+    </div>
   </footer>
 </div>
 
+<div class="lb" id="lb"><img id="lbimg" alt=""></div>
+
 <script>
-/* ===== 只需要改这一块：把 url / mirror / backup 换成你的真实链接 ===== */
+/* ===== 只改这里：下载链接 ===== */
 const CONFIG = {
   version : "v1.9.11",
   updated : "2026-10-11",
-  contact : "作者 QQ：1694515313",   // 例如：B站账号 / QQ群 / 邮箱
   packages : [
     {
       id: "demo",
-      name: "序～二章 体验版",
-      badge: "推荐首次游玩",
+      icon: "android",
+      name: "安卓版（体验版）",
+      badge: "序章 ～ 第二章",
       note: "收录序章《坠落之后》／第一章《看得见我的人》／第二章《被忘记的魔法》，第二章结尾收束。",
       size: "212.0 MB",
       sha256: "7C6EC80FBC27A226C4C61D53572CC06EE6F6E40E2DA5962F500449420C36BD5E",
-      url: "https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/UnconsciousSummer_v1.9.11_demo_CN.apk",           // ← 主下载（TapTap 页 / 对象存储直链 / GitHub Release）
-      mirror: "",
-      backup: "https://1843258518.share.123pan.cn/123pan/Al9lTd-EXFIh"   // ← 备用：123 云盘（免登录、不限速）
+      url: "https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/UnconsciousSummer_v1.9.11_demo_CN.apk",
+      backup: "https://1843258518.share.123pan.cn/123pan/Al9lTd-EXFIh"
     },
     {
       id: "pc",
+      icon: "windows",
       name: "PC 版（Windows）",
       badge: "解压即玩",
-      note: "Windows 10/11 64 位。下载后把整个压缩包解压成文件夹，双击里面的「无意识之夏.exe」开始（首次启动稍慢）。",
+      note: "Windows 10/11 64 位。下载后完整解压，双击文件夹里的「无意识之夏.exe」开始。",
       size: "191.5 MB",
       sha256: "3A74E61D3B6B7099ADF8F2ADAF8E3C98898A74AC75CE55A841FF51B05F6F13EE",
       url: "https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/UnconsciousSummer-1.9.11-win.zip",
-      mirror: "",
-      backup: "https://1843258518.share.123pan.cn/123pan/Al9lTd-usawh"   // ← 备用：123 云盘（PC 版）
+      backup: "https://1843258518.share.123pan.cn/123pan/Al9lTd-usawh"
     }
   ]
 };
-/* ================================================================ */
+/* ============================== */
 
+const ICONS = {
+  android: '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.5l1.8-3.1a.4.4 0 10-.7-.4l-1.8 3.1A7.6 7.6 0 0012 8.2c-1.8 0-3.5.4-4.9 1l-1.8-3a.4.4 0 10-.7.4l1.8 3.1A6.5 6.5 0 003 15.1h18a6.5 6.5 0 00-3.4-5.6zM7.5 12.6a.9.9 0 110-1.8.9.9 0 010 1.8zm9 0a.9.9 0 110-1.8.9.9 0 010 1.8z"/></svg>',
+  windows: '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.6l7.4-1v7.2H3V5.6zm8.6-1.2L21 3v8.8h-9.4V4.4zM3 12.9h7.4v7.2L3 19v-6.1zm8.6 0H21V21l-9.4-1.3v-6.8z"/></svg>'
+};
 const $ = s => document.querySelector(s);
 const isPhone = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 
 document.getElementById("ver").textContent = CONFIG.version + " ｜ 更新于 " + CONFIG.updated;
-if (isPhone) {
-  const t = document.getElementById("devtip");
-  t.style.display = "block";
-  t.textContent = "检测到你在手机上——直接点下面的按钮下载安装即可。";
+
+function btn(cls, label, sub, href, icon) {
+  if (!href) return '<a class="btn ' + cls + ' disabled">' + (icon ? ICONS[icon] : "") + label +
+    '<small>' + (sub || "链接待填写") + '</small></a>';
+  return '<a class="btn ' + cls + '" href="' + href + '" rel="noopener">' + (icon ? ICONS[icon] : "") +
+    label + (sub ? '<small>' + sub + '</small>' : '') + '</a>';
 }
 
-function btn(cls, text, sub, href, disabled) {
-  if (!href) return `<a class="btn ${cls} disabled">${text}<small>${sub || "链接待填写"}</small></a>`;
-  return `<a class="btn ${cls}" href="${href}" rel="noopener">${text}<small>${sub || ""}</small></a>`;
-}
+document.getElementById("dl").innerHTML = CONFIG.packages.map(function (p, i) {
+  var first = (isPhone && p.icon === "android") || (!isPhone && p.icon === "windows");
+  return '<div class="card">' +
+    '<div class="row"><span class="name">' + (ICONS[p.icon] || "") + p.name + '</span>' +
+    '<span class="badge">' + p.badge + '</span></div>' +
+    '<div class="meta">' + p.note + '<br>文件大小 ' + p.size + ' ｜ 版本 ' + CONFIG.version +
+    (first ? ' ｜ <b style="color:#8fd3a8">已按你的设备置顶推荐</b>' : '') + '</div>' +
+    '<div class="btns">' +
+    btn("primary", "下载", p.url ? "主链接（GitHub）" : "待填写", p.url) +
+    btn("", "备用下载", "123 云盘 · 免登录不限速", p.backup) +
+    '</div>' +
+    '<div class="sha">SHA-256<span class="mini" data-copy="' + p.sha256 + '">复制</span>' +
+    '<code>' + p.sha256 + '</code></div></div>';
+}).join("");
 
-document.getElementById("dl").innerHTML = CONFIG.packages.map(p => `
-  <div class="card ${p.warn ? "" : "rec"}">
-    <div class="row">
-      <span class="name">${p.name}</span>
-      <span class="badge ${p.warn ? "warn" : ""}">${p.badge}</span>
-    </div>
-    <div class="meta">${p.note}<br>文件大小 ${p.size} ｜ 版本 ${CONFIG.version}</div>
-    <div class="btns">
-      ${btn("primary", "下载 APK", p.url ? "推荐：点这个" : "主链接待填写", p.url)}
-      ${p.mirror ? btn("", "镜像下载", "主链接慢或用不了时点这里", p.mirror) : ""}
-      ${btn("", "备用下载（123 云盘）", "GitHub 直连慢时用这个，免登录、不限速", p.backup)}
-    </div>
-    <div class="sha">SHA-256<span class="mini" data-copy="${p.sha256}">复制</span><code>${p.sha256}</code></div>
-  </div>`).join("");
-
-document.getElementById("sha").innerHTML = CONFIG.packages.map(p =>
-  `<div style="font-size:13px;color:#c7cfda;margin:6px 0">${p.name}：<code style="font-size:11px">${p.sha256}</code>
-   <span class="mini" data-copy="${p.sha256}">复制</span></div>`).join("");
-
-if (CONFIG.contact) $("#contact").textContent = "反馈 / 交流：" + CONFIG.contact;
-
-document.addEventListener("click", async e => {
-  const el = e.target.closest("[data-copy]");
-  if (!el) return;
-  const txt = el.dataset.copy;
-  try { await navigator.clipboard.writeText(txt); }
-  catch {
-    const ta = document.createElement("textarea");
-    ta.value = txt; document.body.appendChild(ta); ta.select();
-    document.execCommand("copy"); ta.remove();
+document.addEventListener("click", async function (e) {
+  var el = e.target.closest("[data-copy]");
+  if (el) {
+    try { await navigator.clipboard.writeText(el.dataset.copy); }
+    catch (err) {
+      var ta = document.createElement("textarea");
+      ta.value = el.dataset.copy; document.body.appendChild(ta); ta.select();
+      document.execCommand("copy"); ta.remove();
+    }
+    var old = el.textContent; el.textContent = "已复制";
+    setTimeout(function () { el.textContent = old; }, 1200);
+    return;
   }
-  const old = el.textContent; el.textContent = "已复制"; setTimeout(() => el.textContent = old, 1200);
+  var shot = e.target.closest(".shot");
+  if (shot) {
+    $("#lbimg").src = shot.querySelector("img").src;
+    $("#lb").classList.add("on");
+  }
+});
+
+$("#lb").addEventListener("click", function () { $("#lb").classList.remove("on"); });
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") $("#lb").classList.remove("on");
 });
 </script>
 </body>
