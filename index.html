@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>《无意识之夏》下载 · 东方Project二次创作</title>
+<meta name="description" content="东方Project二次创作 · 横屏视觉小说《无意识之夏》安卓版下载。">
+<style>
+  :root{
+    --bg:#0e1014; --card:#171b22; --line:#252b35; --fg:#e9edf3; --dim:#9aa4b2;
+    --gold:#ffd479; --green:#8fd3a8; --pink:#ff9ec7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:16px/1.7 "PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;}
+  a{color:var(--gold);text-decoration:none}
+  .wrap{max-width:760px;margin:0 auto;padding:22px 16px 60px}
+  header{text-align:center;padding:26px 0 10px}
+  h1{margin:0 0 6px;font-size:26px;letter-spacing:.06em}
+  .sub{color:var(--dim);font-size:14px}
+  .tip{margin:14px 0 0;padding:10px 14px;border:1px solid var(--line);border-radius:12px;
+       background:#12161c;color:var(--gold);font-size:14px;display:none}
+  h2{font-size:17px;margin:30px 0 12px;color:var(--dim);font-weight:600;letter-spacing:.04em}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+        padding:18px 16px;margin:0 0 14px}
+  .card.rec{border-color:#4a3f22;box-shadow:0 0 0 1px #4a3f22 inset,0 6px 26px #0006}
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .name{font-size:19px;font-weight:700}
+  .badge{font-size:12px;padding:3px 9px;border-radius:999px;background:#2a3240;color:var(--green)}
+  .badge.warn{background:#3a2a2a;color:var(--pink)}
+  .meta{color:var(--dim);font-size:13px;margin:6px 0 14px}
+  .btns{display:grid;gap:10px}
+  .btn{display:block;text-align:center;padding:14px 16px;border-radius:12px;
+       background:#262d38;color:var(--fg);font-weight:700;border:1px solid #333c49}
+  .btn.primary{background:linear-gradient(180deg,#ffe0a0,#f5c96c);color:#2a2109;border-color:#e5bb63}
+  .btn.disabled{opacity:.45;pointer-events:none}
+  .btn small{display:block;font-weight:400;font-size:12px;opacity:.75;margin-top:2px}
+  .sha{margin-top:12px;font-size:12px;color:var(--dim)}
+  .sha code{display:block;word-break:break-all;background:#0f1319;border:1px solid var(--line);
+            border-radius:8px;padding:8px;margin-top:6px;font-size:11px;color:#c8d2df}
+  .mini{display:inline-block;margin-left:8px;padding:2px 8px;font-size:12px;border:1px solid var(--line);
+        border-radius:8px;background:#101419;cursor:pointer;color:var(--dim)}
+  ul{padding-left:20px;margin:8px 0}
+  li{margin:4px 0;color:#c7cfda;font-size:14px}
+  footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);
+         color:#7d8797;font-size:12px;line-height:1.8}
+  .ok{color:var(--green)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>《无意识之夏》</h1>
+    <div class="sub">东方Project 二次创作 · 横屏视觉小说 · 古明地恋 单人线</div>
+    <div class="sub" id="ver"></div>
+    <div class="tip" id="devtip"></div>
+  </header>
+
+  <h2>下载</h2>
+  <div id="dl"></div>
+
+  <h2>安装说明（安卓）</h2>
+  <ul>
+    <li>浏览器下载完成后，点安装；系统提示"未知来源"时选择允许即可（同人游戏不上架应用商店时的正常步骤）。</li>
+    <li><b>两个包不能同时安装</b>——它们包名相同，后装的会覆盖先装的。</li>
+    <li>建议横屏游玩；首次进入较慢属于正常。</li>
+  </ul>
+
+  <h2>校验码</h2>
+  <p style="font-size:14px;color:#c7cfda">下载后可以核对 SHA-256，确认文件没被二次打包/篡改：</p>
+  <div id="sha"></div>
+
+  <footer>
+    <div>东方Project 二次创作 · 非商业同人 · 不使用官方游戏素材。</div>
+    <div>本作美术素材由 AI 生成（anima / ComfyUI），动态演出由 AI 视频模型生成，剧本经 AI 辅助撰写与润色。</div>
+    <div>若涉及任何侵权内容，请联系我立刻删除整改。</div>
+    <div id="contact"></div>
+  </footer>
+</div>
+
+<script>
+/* ===== 只需要改这一块：把 url / mirror / backup 换成你的真实链接 ===== */
+const CONFIG = {
+  version : "v1.9.11",
+  updated : "2026-10-11",
+  contact : "作者 QQ：1694515313",   // 例如：B站账号 / QQ群 / 邮箱
+  packages : [
+    {
+      id: "demo",
+      name: "序～二章 体验版",
+      badge: "推荐首次游玩",
+      note: "收录序章《坠落之后》／第一章《看得见我的人》／第二章《被忘记的魔法》，第二章结尾收束。",
+      size: "212.0 MB",
+      sha256: "7C6EC80FBC27A226C4C61D53572CC06EE6F6E40E2DA5962F500449420C36BD5E",
+      url: "https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/%E6%97%A0%E6%84%8F%E8%AF%86%E4%B9%8B%E5%A4%8F_v1.9.11-%E5%BA%8F%E4%BA%8C%E7%AB%A0%E4%BD%93%E9%AA%8C%E7%89%88.apk",           // ← 主下载（TapTap 页 / 对象存储直链 / GitHub Release）
+      mirror: "https://ghproxy.net/https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/%E6%97%A0%E6%84%8F%E8%AF%86%E4%B9%8B%E5%A4%8F_v1.9.11-%E5%BA%8F%E4%BA%8C%E7%AB%A0%E4%BD%93%E9%AA%8C%E7%89%88.apk",        // ← 镜像（ghproxy 加速链接等）
+      backup: ""         // ← 备用（123 云盘等）
+    },
+    {
+      id: "test",
+      name: "全章测试版",
+      badge: "含未完成的第三章",
+      warn: true,
+      note: "在体验版基础上继续进入第三章《褪色的约定》（制作中，可能看不懂的部分请见谅）。",
+      size: "212.0 MB",
+      sha256: "36859911F89142B08F6A1231F0670EDF3D07F092B86CB9EB98F37F240D2F8945",
+      url: "https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/%E6%97%A0%E6%84%8F%E8%AF%86%E4%B9%8B%E5%A4%8F_v1.9.11-%E5%85%A8%E7%AB%A0%E6%B5%8B%E8%AF%95%E7%89%88.apk",
+      mirror: "https://ghproxy.net/https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/%E6%97%A0%E6%84%8F%E8%AF%86%E4%B9%8B%E5%A4%8F_v1.9.11-%E5%85%A8%E7%AB%A0%E6%B5%8B%E8%AF%95%E7%89%88.apk",
+      backup: ""
+    }
+  ]
+};
+/* ================================================================ */
+
+const $ = s => document.querySelector(s);
+const isPhone = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+document.getElementById("ver").textContent = CONFIG.version + " ｜ 更新于 " + CONFIG.updated;
+if (isPhone) {
+  const t = document.getElementById("devtip");
+  t.style.display = "block";
+  t.textContent = "检测到你在手机上——直接点下面的按钮下载安装即可。";
+}
+
+function btn(cls, text, sub, href, disabled) {
+  if (!href) return `<a class="btn ${cls} disabled">${text}<small>${sub || "链接待填写"}</small></a>`;
+  return `<a class="btn ${cls}" href="${href}" rel="noopener">${text}<small>${sub || ""}</small></a>`;
+}
+
+document.getElementById("dl").innerHTML = CONFIG.packages.map(p => `
+  <div class="card ${p.warn ? "" : "rec"}">
+    <div class="row">
+      <span class="name">${p.name}</span>
+      <span class="badge ${p.warn ? "warn" : ""}">${p.badge}</span>
+    </div>
+    <div class="meta">${p.note}<br>文件大小 ${p.size} ｜ 版本 ${CONFIG.version}</div>
+    <div class="btns">
+      ${btn("primary", "下载 APK", p.url ? "推荐：点这个" : "主链接待填写", p.url)}
+      ${btn("", "镜像下载", "主链接慢或用不了时点这里", p.mirror)}
+      ${btn("", "备用下载", "前两个都不行时点这里", p.backup)}
+    </div>
+    <div class="sha">SHA-256<span class="mini" data-copy="${p.sha256}">复制</span><code>${p.sha256}</code></div>
+  </div>`).join("");
+
+document.getElementById("sha").innerHTML = CONFIG.packages.map(p =>
+  `<div style="font-size:13px;color:#c7cfda;margin:6px 0">${p.name}：<code style="font-size:11px">${p.sha256}</code>
+   <span class="mini" data-copy="${p.sha256}">复制</span></div>`).join("");
+
+if (CONFIG.contact) $("#contact").textContent = "反馈 / 交流：" + CONFIG.contact;
+
+document.addEventListener("click", async e => {
+  const el = e.target.closest("[data-copy]");
+  if (!el) return;
+  const txt = el.dataset.copy;
+  try { await navigator.clipboard.writeText(txt); }
+  catch {
+    const ta = document.createElement("textarea");
+    ta.value = txt; document.body.appendChild(ta); ta.select();
+    document.execCommand("copy"); ta.remove();
+  }
+  const old = el.textContent; el.textContent = "已复制"; setTimeout(() => el.textContent = old, 1200);
+});
+</script>
+</body>
+</html>
