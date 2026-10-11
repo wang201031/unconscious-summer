@@ -94,7 +94,7 @@ const CONFIG = {
       size: "212.0 MB",
       sha256: "7C6EC80FBC27A226C4C61D53572CC06EE6F6E40E2DA5962F500449420C36BD5E",
       url: "https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/UnconsciousSummer_v1.9.11_demo_CN.apk",           // ← 主下载（TapTap 页 / 对象存储直链 / GitHub Release）
-      mirror: "https://ghproxy.net/https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/UnconsciousSummer_v1.9.11_demo_CN.apk",        // ← 镜像（ghproxy 加速链接等）
+      mirror: "",        // ← 镜像（ghproxy 加速链接等）
       backup: ""         // ← 备用（123 云盘等）
     },
     {
@@ -106,7 +106,7 @@ const CONFIG = {
       size: "212.0 MB",
       sha256: "36859911F89142B08F6A1231F0670EDF3D07F092B86CB9EB98F37F240D2F8945",
       url: "https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/UnconsciousSummer_v1.9.11_full_CN.apk",
-      mirror: "https://ghproxy.net/https://github.com/wang201031/unconscious-summer/releases/download/v1.9.11/UnconsciousSummer_v1.9.11_full_CN.apk",
+      mirror: "",
       backup: ""
     }
   ]
@@ -137,8 +137,8 @@ document.getElementById("dl").innerHTML = CONFIG.packages.map(p => `
     <div class="meta">${p.note}<br>文件大小 ${p.size} ｜ 版本 ${CONFIG.version}</div>
     <div class="btns">
       ${btn("primary", "下载 APK", p.url ? "推荐：点这个" : "主链接待填写", p.url)}
-      ${btn("", "镜像下载", "主链接慢或用不了时点这里", p.mirror)}
-      ${btn("", "备用下载", "前两个都不行时点这里", p.backup)}
+      ${p.mirror ? btn("", "镜像下载", "主链接慢或用不了时点这里", p.mirror) : ""}
+      ${btn("", "备用下载（123 云盘）", "GitHub 直连慢时用这个，免登录、不限速", p.backup)}
     </div>
     <div class="sha">SHA-256<span class="mini" data-copy="${p.sha256}">复制</span><code>${p.sha256}</code></div>
   </div>`).join("");
